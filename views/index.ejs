@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+     <ul class='pokemon'>
+     <%for (let i = 0; i < pokemon.length; i++) {%>
+        <li><a href="/pokemon/<%=i%>"><%=pokemon[i].name%></a></li>
+        <%}%>
+    </ul>
 </body>
 </html>
