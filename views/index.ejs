@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link href= "/css/styles.css" rel="stylesheet" type="text/css" />
     <title>Pokemon</title>
 </head>
 <body>
+ <a class="create" href="/pokemon/new"><button>Make your own</button></a>
      <ul class='pokemon'>
      <%for (let i = 0; i < pokemon.length; i++) {%>
         <li><a href="/pokemon/<%=i%>"><%=pokemon[i].name%></a></li>

@@ -13,7 +13,7 @@ app.get('/pokemon/new', (req, res) => {
 });
 
 app.get('/pokemon', (req,res) => {
-    res.render('index.ejs', {pokemon: pokemon})
+    res.render('index.ejs', {pokemon: pokemon});
 });
 
 app.get('/pokemon/:id', (req,res) =>{
@@ -29,9 +29,9 @@ app.put('/pokemon', (req, res) => {
     res.render('edit.ejs', {pokemon: pokemon[req.params.id], id: req.params.id});
 })
 
-app.put('/pokemon', (req, res) => {
+app.put('/pokemon/:id', (req, res) => {
     pokemon[req.params.id] = req.body;
-    res.redirect('/pokemon')
+    res.redirect('/pokemon');
 });
 
 app.delete('/pokemon/:id', (req, res) => {
