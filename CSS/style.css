@@ -1,3 +1,8 @@
 ul {
     list-style-type: circle;
 }
+body {
+    background-color: #E89618;
+    color: white;
+    font-family: sans-serif;
+}
