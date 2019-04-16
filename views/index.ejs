@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pokemon</title>
 </head>
 <body>
      <ul class='pokemon'>
      <%for (let i = 0; i < pokemon.length; i++) {%>
         <li><a href="/pokemon/<%=i%>"><%=pokemon[i].name%></a></li>
+        <form action="/pokemon/<%=i%>/?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+         </form>
+            <a href="/pokemon/<%=i%>/edit"><button>Edit</button></a></li>
         <%}%>
     </ul>
 </body>
