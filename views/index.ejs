@@ -9,13 +9,15 @@
 </head>
 <body>
  <a class="create" href="/pokemon/new"><button>Make your own</button></a>
-     <ul class='pokemon'>
+    <ul class='pokemon'>
+    <%# don't know why my pokemon won't show up as a list. %>
      <%for (let i = 0; i < pokemon.length; i++) {%>
-        <li><a href="/pokemon/<%=i%>"><%=pokemon[i].name%></a></li>
+        <li><a href="/pokemon/<%=i%>"><%=pokemon[i].name%></a>
         <form action="/pokemon/<%=i%>/?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-         </form>
-            <a href="/pokemon/<%=i%>/edit"><button>Edit</button></a></li>
+        <button type="submit">Delete</button>
+        </form>
+            <a href="/pokemon/<%=i%>/edit"><button>Edit</button></a>
+        </li>
         <%}%>
     </ul>
 </body>

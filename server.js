@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const pokemon = require('./model/pokemon');
+const pokemon = require('./model/pokemon.js');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -24,8 +24,8 @@ app.get('/pokemon/:id', (req,res) =>{
 app.post('/pokemon', (req, res) => {
     res.redirect('/pokemon');
 });
-
-app.put('/pokemon', (req, res) => {
+// don't know why edit won't get pulled up.
+app.get('/pokemon/:id/edit', (req, res) => {
     res.render('edit.ejs', {pokemon: pokemon[req.params.id], id: req.params.id});
 })
 
@@ -51,7 +51,7 @@ app.delete('/pokemon/:id', (req, res) => {
 
 
 app.listen(3000, () => {
-    console.log('app listening on port: ', 3000);
+    console.log('Tuned into', 3000);
 });
 
 module.exports = app;
